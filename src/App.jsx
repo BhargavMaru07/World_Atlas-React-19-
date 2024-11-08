@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./components/AppLayout";
+
+import "./App.css";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Country from "./pages/Country";
+import ErrorPage from "./pages/ErrorPage";
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        {
+          path: "country",
+          element: <Country />,
+        },
+      ],
+    },
+  ],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+      v7_skipActionErrorRevalidation: true,
+      v7_startTransition: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+    },
+  }
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
+
+// Info of All Future Flags in createBrowserRouter
+// v7_relativeSplatPath: Changes relative route resolution within splat (*) routes.
+// v7_skipActionErrorRevalidation: Skips revalidation after 4xx/5xx action errors.
+// v7_startTransition: Wraps route state updates in React.startTransition, optimizing for concurrent rendering.
+// v7_fetcherPersist: Alters the persistence behavior of fetchers (e.g., fetcher-based loaders).
+// v7_normalizeFormMethod: Normalizes form submission methods to uppercase (POST, GET, etc.).
+// v7_partialHydration: Changes the hydration behavior of the RouterProvider to enable partial hydration for faster page loads.
