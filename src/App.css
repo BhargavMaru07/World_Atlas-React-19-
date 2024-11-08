@@ -178,7 +178,7 @@ nav ul {
 
 .hero-section .container {
   padding: 3.2rem;
-  margin: 5rem auto;
+  margin: 8rem auto;
   gap: 6.4rem;
 }
 
@@ -514,7 +514,7 @@ contact us page
 --------------- */
 
 .section-contact {
-  margin: 9.6rem auto;
+  margin: 3.6rem auto;
 
   & hr {
     border-color: rgba(255, 255, 255, 0.6);
