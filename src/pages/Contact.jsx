@@ -1,12 +1,18 @@
 import React from "react";
 
 function Contact() {
+
+  const handleSubmitForm = (formData)=>{
+    const formInput = Object.fromEntries(formData.entries()); //formData.entries() it's return iteratore so we convert into object key-value pair
+    console.log(formInput);
+  }
+
   return (
     <section className="section-contact">
       <h2 className="container-title">Contact Us</h2>
 
       <div className="contact-wrapper container">
-        <form action="">
+        <form action={handleSubmitForm}>
           <input
             type="text"
             required
