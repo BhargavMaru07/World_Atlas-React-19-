@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from "axios";
 
 let api = axios.create({
   baseURL: "https://restcountries.com/v3.1",
@@ -9,3 +9,10 @@ export const getCountryData = () => {
   return api.get("/all?fields=name,population,region,capital,flags");
 };
 
+// HTTP GET METHOD FOR INDIVIDUAL COUNTRY..
+
+export const getCountryIndividualData = (name) => {
+  return api.get(
+    `/name/${name}?fullText=true&fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
+  );
+};
