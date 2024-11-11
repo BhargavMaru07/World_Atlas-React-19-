@@ -1,25 +1,50 @@
 import React from "react";
 
-function SearchFilter({ search, setSearch, filter, setFilter }) {
+function SearchFilter({
+  search,
+  setSearch,
+  filter,
+  setFilter,
+  countries,
+  setCountries,
+}) {
+  let handleSearchChange = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
 
-    let handleSearchChange = (e)=>{
-        e.preventDefault();
-        setSearch(e.target.value)
-    } 
+  let handleSelectChange = (e) => {
+    e.preventDefault();
+    setFilter(e.target.value);
+  };
 
-    let handleSelectChange = (e)=>{
-        e.preventDefault()
-        setFilter(e.target.value)
-    }
+  //state variable ma koi updation no karay so teno duplicate banavvo
+
+  let sortCountries = (sort) => {
+    let sortCountry = [...countries].sort((a, b) => {
+      return sort === "asc"
+        ? a.name.common.localeCompare(b.name.common)
+        : b.name.common.localeCompare(a.name.common);
+    });
+    setCountries(sortCountry)
+  };
 
   return (
     <section className="section-searchFilter container">
       <input
         type="text"
-        placeholder="Enter Country name"
+        placeholder="Search Country"
         value={search}
         onChange={handleSearchChange}
       />
+
+      <div>
+        <button onClick={() => sortCountries("asc")}>Asc</button>
+      </div>
+
+      <div>
+        <button onClick={() => sortCountries("des")}>Des</button>
+      </div>
 
       <div>
         <select

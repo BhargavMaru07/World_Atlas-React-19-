@@ -46,12 +46,20 @@ function Country() {
         setSearch={setSearch}
         filter={filter}
         setFilter={setFilter}
+        countries={countries}
+        setCountries={setCountries}
       />
       <ul className="grid grid-four-cols">
-        {filterCountries.map((curCountry, index) => {
-          return <CountryCard country={curCountry} key={index} />;
-        })}
+        {filterCountries.length > 0 ? (
+          filterCountries.map((curCountry, index) => {
+            return <CountryCard country={curCountry} key={index} />;
+          })
+        ) : (
+          <li className="no-country">** Country is not Found !!</li>
+        )}
       </ul>
+
+      {/* if filterCountries is empty or undefined. However, it isn't working because an empty array in JavaScript is still considered "truthy." So, even if filterCountries has no items, the expression {filterCountries ? filterCountries.map(...) : "No Country There"} still executes filterCountries.map(...) instead of displaying "No Country There". To handle this correctly, you should check if filterCountries has a length of 0 (meaning it's an empty array) */}
     </section>
   );
 }

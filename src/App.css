@@ -39,7 +39,6 @@ li {
   list-style: none;
 }
 
-
 a {
   color: #000;
   text-decoration: none;
@@ -49,7 +48,7 @@ a {
   }
 }
 
-.blue{
+.blue {
   color: #2e86c1;
 }
 
@@ -188,7 +187,7 @@ nav ul {
 
 .heading-xl {
   font-family: inherit;
-  font-size: clamp(5.2rem, 6vw, 4.241rem);  
+  font-size: clamp(5.2rem, 6vw, 4.241rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -1px;
@@ -412,6 +411,11 @@ country Card
   }
 }
 
+.no-country{
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
 /* indivisual card container  */
 .country-details-card {
   max-width: 100%;
@@ -464,6 +468,9 @@ country Card
     font-size: 1.55rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
+    line-height: 3rem;
+    border-radius: 5rem;
+    padding-left: 1rem;
     text-transform: capitalize;
     color: rgba(255, 255, 255, 0.8);
     border: 0.05rem solid #fff;
@@ -598,20 +605,19 @@ contact us Page ends here
   }
 } */
 
-
- .loader {
+.loader {
   width: 50px;
   aspect-ratio: 1;
-  --_c:no-repeat radial-gradient(farthest-side,#25b09b 92%,#0000);
-  background: 
-    var(--_c) top,
-    var(--_c) left,
-     var(--_c) right,
-    var(--_c) bottom;
+  --_c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+  background: var(--_c) top, var(--_c) left, var(--_c) right, var(--_c) bottom;
   background-size: 12px 12px;
   animation: l7 1s infinite;
- }
- @keyframes l7 {to{transform: rotate(.5turn)}}
+}
+@keyframes l7 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
 
 .loader-section {
   height: 50vh;
