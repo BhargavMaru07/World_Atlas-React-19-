@@ -15,6 +15,7 @@ html {
 
 body {
   background-color: black;
+  position: relative;
 }
 
 h1,
@@ -109,6 +110,9 @@ header {
   box-shadow: rgba(255, 255, 255, 0.3) 0px 10px 10px -10px;
   background-color: #202020;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   & .container {
     height: 10rem;
@@ -125,12 +129,45 @@ header {
 nav ul {
   display: flex;
   justify-content: flex-end;
-  /* background-color: yellow; */
   gap: 3.2rem;
   color: #fff;
 
   & li a {
     color: #fff;
+    position: relative;
+  }
+
+  & li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #2e86c1;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+  }
+
+  & li a:hover::after {
+    animation: underline 0.5s linear forwards;
+  }
+}
+
+@keyframes underline {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  75% {
+    width: 0;
+    left: 100%;
+  }
+  100% {
+    width: 100%;
+    left: 0;
   }
 }
 
@@ -153,9 +190,10 @@ nav ul {
     position: absolute;
     top: 10rem;
     left: 0;
-    background-color: #0d1212;
     width: 100%;
-    box-shadow: rgba(255, 252, 252, 0.25) 0px 14px 28px;
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
   }
 
   .menu-mobile ul {
@@ -411,7 +449,7 @@ country Card
   }
 }
 
-.no-country{
+.no-country {
   margin: 0 auto;
   font-size: 2rem;
 }
@@ -573,6 +611,11 @@ contact us Page ends here
 }
 
 @media screen and (max-width: 760px) {
+  .section-searchFilter {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .grid-four-cols,
   .grid-three-cols,
   .grid-two-cols {

@@ -21,7 +21,7 @@ function Footer() {
           const { icon, title, details } = currdata;
           return (
             <div className="footer-contact" key={index}>
-              <div className="icon">{footerIcon[icon]}</div>{" "}
+              <div className="icon"> {footerIcon[icon]}</div>{" "}
               {/* footerIcon.icon it's wrong , so we use dynamic */}
               <div className="footer-contact-text">
                 <p>{title}</p>

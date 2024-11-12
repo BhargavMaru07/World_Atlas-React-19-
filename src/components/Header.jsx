@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 
 function Header() {
+  const [show, setShow] = useState(false);
+
+  let handleBtnToggle = () => {
+    return setShow(!show);
+  };
+
   return (
     <header>
       <div className="container">
@@ -12,7 +20,7 @@ function Header() {
             </NavLink>
           </div>
 
-          <nav>
+          <nav className={show ? "menu-mobile" : "menu-web"}>
             <ul>
               <li>
                 <NavLink
@@ -41,13 +49,19 @@ function Header() {
               <li>
                 <NavLink
                   to="/contact"
-                  className={({ isActive }) => (isActive ? "blue" :null)}
+                  className={({ isActive }) => (isActive ? "blue" : null)}
                 >
                   Contact
                 </NavLink>
               </li>
             </ul>
           </nav>
+
+          <div className="ham-menu">
+            <button onClick={handleBtnToggle}>
+              {show ? <RxCross2 /> : <GiHamburgerMenu />}
+            </button>
+          </div>
         </div>
       </div>
     </header>
