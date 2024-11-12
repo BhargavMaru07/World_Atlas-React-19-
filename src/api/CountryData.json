@@ -3,56 +3,56 @@
     "id": 1,
     "countryName": "India",
     "capital": "New Delhi",
-    "population": 1393409038,
+    "population": 1450935791,
     "interestingFact": "India is the birthplace of four major world religions: Hinduism, Buddhism, Jainism, and Sikhism."
   },
   {
     "id": 2,
     "countryName": "Nepal",
     "capital": "Kathmandu",
-    "population": 29609623,
+    "population": 29651054,
     "interestingFact": "Nepal is home to Mount Everest, the tallest mountain in the world, standing at 8,848 meters."
   },
   {
     "id": 3,
     "countryName": "United States of America",
     "capital": "Washington, D.C.",
-    "population": 331002651,
+    "population": 	345426571,
     "interestingFact": "The United States is home to the world's largest economy and the first successful manned moon landing in 1969."
   },
   {
     "id": 4,
     "countryName": "Australia",
     "capital": "Canberra",
-    "population": 25687041,
+    "population": 26713205,
     "interestingFact": "Australia is home to the Great Barrier Reef, the largest coral reef system in the world."
   },
   {
     "id": 5,
     "countryName": "Brazil",
     "capital": "Brasilia",
-    "population": 213993437,
+    "population": 211998573,
     "interestingFact": "Brazil is home to the Amazon Rainforest, the largest tropical rainforest in the world."
   },
   {
     "id": 6,
     "countryName": "France",
     "capital": "Paris",
-    "population": 67407241,
+    "population": 66548530,
     "interestingFact": "The Eiffel Tower in Paris was once the tallest man-made structure in the world."
   },
   {
     "id": 7,
     "countryName": "Russia",
     "capital": "Moscow",
-    "population": 1324216107,
+    "population": 144820423,
     "interestingFact": "Russia is the largest country in the world by area, covering more than 17 million square kilometers."
   },
   {
     "id": 8,
     "countryName": "China",
     "capital": "Beijing",
-    "population": 1444216107,
+    "population": 1419321278,
     "interestingFact": "The Great Wall of China is visible from space on rare occasions."
   }
 ]
