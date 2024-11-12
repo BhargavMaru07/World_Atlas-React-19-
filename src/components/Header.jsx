@@ -26,6 +26,7 @@ function Header() {
                 <NavLink
                   to="/"
                   className={({ isActive }) => (isActive ? "blue" : null)}
+                  onClick={handleBtnToggle}
                 >
                   Home
                 </NavLink>
@@ -34,6 +35,7 @@ function Header() {
                 <NavLink
                   to="/about"
                   className={({ isActive }) => (isActive ? "blue" : null)}
+                  onClick={handleBtnToggle}
                 >
                   About
                 </NavLink>
@@ -42,6 +44,7 @@ function Header() {
                 <NavLink
                   to="/country"
                   className={({ isActive }) => (isActive ? "blue" : null)}
+                  onClick={handleBtnToggle}
                 >
                   Country
                 </NavLink>
@@ -50,6 +53,7 @@ function Header() {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) => (isActive ? "blue" : null)}
+                  onClick={handleBtnToggle}
                 >
                   Contact
                 </NavLink>
