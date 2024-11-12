@@ -58,6 +58,15 @@ function Header() {
                   Contact
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/population"
+                  className={({ isActive }) => (isActive ? "blue" : null)}
+                  onClick={handleBtnToggle}
+                >
+                  Population
+                </NavLink>
+              </li>
             </ul>
           </nav>
 

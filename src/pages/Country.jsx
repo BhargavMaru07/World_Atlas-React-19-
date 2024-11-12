@@ -18,8 +18,15 @@ function Country() {
       setCountries(res.data);
     });
   }, []);
+  
+
+  //ordering by population
+  // let p = [...countries].sort((a,b)=>b.population - a.population)
+  // console.log(p);
+
 
   if (isPending) return <Loader />;
+  
 
   //searching and filter logic
 

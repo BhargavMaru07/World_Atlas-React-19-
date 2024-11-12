@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Country from "./pages/Country";
 import ErrorPage from "./pages/ErrorPage";
 import CountryDetail from "./components/CountryDetail";
+import Population from "./pages/Population";
 
 const router = createBrowserRouter(
   [
@@ -36,6 +37,10 @@ const router = createBrowserRouter(
         {
           path: "country/:id",
           element: <CountryDetail />,
+        },
+        {
+          path: "population",
+          element: <Population />,
         },
       ],
     },

@@ -668,3 +668,11 @@ contact us Page ends here
   justify-content: center;
   align-items: center;
 }
+
+
+/* population-section */
+
+.population-section{
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+}
