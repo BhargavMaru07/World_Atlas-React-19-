@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
@@ -5,6 +7,16 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   const [show, setShow] = useState(false);
+
+  useGSAP(()=>{
+    gsap.from(".title,.nav-li", {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,  
+      delay: 0.3,
+      stagger:0.08
+    });
+  })
 
   let handleBtnToggle = () => {
     return setShow(!show);
@@ -16,13 +28,13 @@ function Header() {
         <div className="grid navbar-grid">
           <div className="Logo">
             <NavLink to="/">
-              <h1>WorldAtlas</h1>
+              <h1 className="title">WorldAtlas</h1>
             </NavLink>
           </div>
 
           <nav className={show ? "menu-mobile" : "menu-web"}>
             <ul>
-              <li>
+              <li className="nav-li">
                 <NavLink
                   to="/"
                   className={({ isActive }) => (isActive ? "blue" : null)}
@@ -31,7 +43,7 @@ function Header() {
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="nav-li">
                 <NavLink
                   to="/about"
                   className={({ isActive }) => (isActive ? "blue" : null)}
@@ -40,7 +52,7 @@ function Header() {
                   About
                 </NavLink>
               </li>
-              <li>
+              <li className="nav-li">
                 <NavLink
                   to="/country"
                   className={({ isActive }) => (isActive ? "blue" : null)}
@@ -49,7 +61,7 @@ function Header() {
                   Country
                 </NavLink>
               </li>
-              <li>
+              <li className="nav-li">
                 <NavLink
                   to="/contact"
                   className={({ isActive }) => (isActive ? "blue" : null)}
@@ -58,7 +70,7 @@ function Header() {
                   Contact
                 </NavLink>
               </li>
-              <li>
+              <li className="nav-li">
                 <NavLink
                   to="/population"
                   className={({ isActive }) => (isActive ? "blue" : null)}
